@@ -10,7 +10,9 @@ const userSchema = new mongoose.Schema({
   },
   createdAt: {
     type: String,
-    default: () => moment().tz("Asia/Kolkata").format("MMMM D, YYYY h:mm A"),
+    default: function () {
+      return moment().tz("Asia/Kolkata").format("MMMM D, YYYY h:mm A");
+    },
   },
 });
 
